@@ -1,1 +1,15 @@
-<p>hero-detail works!</p>
+<!--*ngIf：使用selectedHero存在时才显示所选英雄的详情  -->
+<div *ngIf=" hero">
+
+        <!-- uppercase:大写字母的管道 -->
+        <h2>{{ hero.name | uppercase}} Details</h2>
+        <div><span>id: </span>{{ hero.id}}</div>
+        <!-- <div><span>name: </span>{{hero.name}}</div> -->
+        <div>
+            <label>name:
+                <!--ngModel 指令实现了双向数据绑定 ，使用前需导入-->
+              <input [(ngModel)]=" hero.name" placeholder="name"/>
+            </label>
+        </div>
+        
+        </div>
