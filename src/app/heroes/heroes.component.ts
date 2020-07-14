@@ -5,6 +5,8 @@ import { Hero } from '../hero';
 // import { HEROES } from '../mock-heroes';
 // 导入服务
 import { HeroService } from '../hero.service';
+//
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -30,7 +32,8 @@ export class HeroesComponent implements OnInit {
 
   // 往构造函数中　添加服务heroService，其类型为HeroService
   constructor(
-    private heroService: HeroService
+    private heroService: HeroService,
+    private messageService: MessageService
   ) { }
 
   /*
@@ -42,6 +45,8 @@ export class HeroesComponent implements OnInit {
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+    //　当用户点击某个英雄时，如何发送和显示一条消息
+    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
   }
   // // 获取这些英雄模拟数据
   //   getHeroes(): void {
