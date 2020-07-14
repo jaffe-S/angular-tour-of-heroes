@@ -1,4 +1,13 @@
 <h1>{{title}}</h1>
 <!-- 添加模块 -->
-<app-heroes></app-heroes>
+
+<!-- <app-heroes></app-heroes> -->
+<!-- 作用: 用户应该能通过点击链接进行导航，而不用被迫把路由的 URL 粘贴到地址栏 -->
+<nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/heroes">Heroes</a>
+</nav>
+<!-- heroes路由出口　　在地址栏中把 /heroes 追加到 URL 后面 -->
+<router-outlet></router-outlet>
+
 <app-messages></app-messages>

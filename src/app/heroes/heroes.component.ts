@@ -17,10 +17,10 @@ export class HeroesComponent implements OnInit {
 
   // hero = 'Windstorm';
 
-  hero: Hero = {
-    id: 1,
-    name: 'Windstorm'
-  };
+  // hero: Hero = {
+  //   id: 1,
+  //   name: 'Windstorm'
+  // };
   // // 英雄列表
   // heroes = HEROES;
 
@@ -28,7 +28,7 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[];
 
   // 点击的ｌｉ值
-  selectedHero: Hero;
+  // selectedHero: Hero;
 
   // 往构造函数中　添加服务heroService，其类型为HeroService
   constructor(
@@ -43,11 +43,11 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    //　当用户点击某个英雄时，如何发送和显示一条消息
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  }
+  // onSelect(hero: Hero): void {
+  //   this.selectedHero = hero;
+  //   //　当用户点击某个英雄时，如何发送和显示一条消息
+  //   this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  // }
   // // 获取这些英雄模拟数据
   //   getHeroes(): void {
   // //　(同步)

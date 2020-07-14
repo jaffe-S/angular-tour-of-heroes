@@ -38,4 +38,12 @@ export class HeroService {
     // of(HEROES) 会返回一个 Observable<Hero[]>，它会发出单个值，这个值就是这些模拟英雄的数组
     return of(HEROES);
   }
+
+
+  // 它接收 id 参数, ( ` ) 用于定义 JavaScript 的 模板字符串字面量，以便嵌入 id
+  getHero(id: number): Observable<Hero> {
+    // TODO: send the message _after_ fetching the hero
+    this.messageService.add(`HeroService: fetched hero id=${id}`);
+    return of(HEROES.find(hero => hero.id === id));
+  }
 }

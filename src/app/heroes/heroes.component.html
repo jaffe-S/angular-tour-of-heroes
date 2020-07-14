@@ -7,27 +7,29 @@
 <!-- <div><span>name: </span>{{hero.name}}</div> -->
 <!-- <div>
     <label>name: -->
-        <!--ngModel 指令实现了双向数据绑定 ，使用前需导入-->
-      <!-- <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+<!--ngModel 指令实现了双向数据绑定 ，使用前需导入-->
+<!-- <input [(ngModel)]="selectedHero.name" placeholder="name"/>
     </label>
 </div>
 
 </div> -->
 
 <!--[hero]="selectedHero" :属性绑定——单向数据 -->
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
 
 <h2>My Heroes</h2>
 <ul class="heroes">
-    <!-- *ngFor：复写器指令（循环） -->
-    <!-- [class.selected]： CSS 类绑定 当hero === selectedHero时，样式生效-->
-    <!-- (click)="onSelect(hero)" 点击事件-->
-  <li 
+  <!-- *ngFor：复写器指令（循环） -->
+  <!-- [class.selected]： CSS 类绑定 当hero === selectedHero时，样式生效-->
+  <!-- (click)="onSelect(hero)" 点击事件-->
+  <!-- <li 
   *ngFor="let hero of heroes" 
   [class.selected]="hero === selectedHero"
   (click)="onSelect(hero)"
-  >
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  > -->
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
   </li>
 </ul>
-
