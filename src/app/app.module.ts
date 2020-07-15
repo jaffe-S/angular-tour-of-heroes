@@ -14,6 +14,13 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+//+ HttpClient 是 Angular 通过 HTTP 与远程服务器通讯的机制
+import { HttpClientModule } from '@angular/common/http';
+
+// 使用 内存 Web API模拟出的远程数据服务器通讯
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +32,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    // +
+    HttpClientModule,
+    // forRoot() 配置方法接收一个 InMemoryDataService 类来初始化内存数据库
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
