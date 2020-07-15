@@ -45,4 +45,9 @@ export class HeroDetailComponent implements OnInit {
     // 利用注入的 Location 服务,在浏览器的历史栈中后退一步
     this.location.back();
   }
+
+  save(): void {
+    this.heroService.updateHero(this.hero)
+      .subscribe(() => this.goBack());
+  }
 }
